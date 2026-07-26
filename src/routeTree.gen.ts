@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ItItIndexRouteImport } from './routes/it-it/index'
 import { Route as ApiPublicGoIdRouteImport } from './routes/api/public/go.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ItItIndexRoute = ItItIndexRouteImport.update({
+  id: '/it-it/',
+  path: '/it-it/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPublicGoIdRoute = ApiPublicGoIdRouteImport.update({
@@ -25,27 +31,31 @@ const ApiPublicGoIdRoute = ApiPublicGoIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/it-it/': typeof ItItIndexRoute
   '/api/public/go/$id': typeof ApiPublicGoIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/it-it': typeof ItItIndexRoute
   '/api/public/go/$id': typeof ApiPublicGoIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/it-it/': typeof ItItIndexRoute
   '/api/public/go/$id': typeof ApiPublicGoIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/public/go/$id'
+  fullPaths: '/' | '/it-it/' | '/api/public/go/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/public/go/$id'
-  id: '__root__' | '/' | '/api/public/go/$id'
+  to: '/' | '/it-it' | '/api/public/go/$id'
+  id: '__root__' | '/' | '/it-it/' | '/api/public/go/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ItItIndexRoute: typeof ItItIndexRoute
   ApiPublicGoIdRoute: typeof ApiPublicGoIdRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/it-it/': {
+      id: '/it-it/'
+      path: '/it-it'
+      fullPath: '/it-it/'
+      preLoaderRoute: typeof ItItIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/public/go/$id': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ItItIndexRoute: ItItIndexRoute,
   ApiPublicGoIdRoute: ApiPublicGoIdRoute,
 }
 export const routeTree = rootRouteImport
