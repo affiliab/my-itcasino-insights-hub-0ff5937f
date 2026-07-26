@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import CasinoPage, { buildStructuredData } from "@/components/CasinoPage";
 
-const CANONICAL = "https://www.consulentia18.it/";
-const SUBDOMAIN = "https://miglior-casino-online-non-aams.consulentia18.it/";
+const CANONICAL = "https://miglior-casino-online-non-aams.consulentia18.it/";
 const XDEFAULT = "https://www.consulentia18.it/";
 
 export const Route = createFileRoute("/it-it/")({
@@ -20,7 +19,7 @@ export const Route = createFileRoute("/it-it/")({
     ],
     links: [
       { rel: "canonical", href: CANONICAL },
-      { rel: "alternate", hrefLang: "it-IT", href: SUBDOMAIN },
+      { rel: "alternate", hrefLang: "it-IT", href: CANONICAL },
       { rel: "alternate", hrefLang: "x-default", href: XDEFAULT },
     ],
     scripts: buildStructuredData(CANONICAL).map(d => ({
