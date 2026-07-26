@@ -9,10 +9,46 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as CookieRouteImport } from './routes/cookie'
+import { Route as ContactsRouteImport } from './routes/contacts'
+import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ItItIndexRouteImport } from './routes/it-it/index'
 import { Route as ApiPublicGoIdRouteImport } from './routes/api/public/go.$id'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookieRoute = CookieRouteImport.update({
+  id: '/cookie',
+  path: '/cookie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactsRoute = ContactsRouteImport.update({
+  id: '/contacts',
+  path: '/contacts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SplatRoute = SplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,36 +67,130 @@ const ApiPublicGoIdRoute = ApiPublicGoIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
+  '/contacts': typeof ContactsRoute
+  '/cookie': typeof CookieRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/it-it/': typeof ItItIndexRoute
   '/api/public/go/$id': typeof ApiPublicGoIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
+  '/contacts': typeof ContactsRoute
+  '/cookie': typeof CookieRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/it-it': typeof ItItIndexRoute
   '/api/public/go/$id': typeof ApiPublicGoIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
+  '/contacts': typeof ContactsRoute
+  '/cookie': typeof CookieRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/it-it/': typeof ItItIndexRoute
   '/api/public/go/$id': typeof ApiPublicGoIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/it-it/' | '/api/public/go/$id'
+  fullPaths:
+    | '/'
+    | '/$'
+    | '/contacts'
+    | '/cookie'
+    | '/privacy-policy'
+    | '/robots.txt'
+    | '/sitemap.xml'
+    | '/it-it/'
+    | '/api/public/go/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/it-it' | '/api/public/go/$id'
-  id: '__root__' | '/' | '/it-it/' | '/api/public/go/$id'
+  to:
+    | '/'
+    | '/$'
+    | '/contacts'
+    | '/cookie'
+    | '/privacy-policy'
+    | '/robots.txt'
+    | '/sitemap.xml'
+    | '/it-it'
+    | '/api/public/go/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/$'
+    | '/contacts'
+    | '/cookie'
+    | '/privacy-policy'
+    | '/robots.txt'
+    | '/sitemap.xml'
+    | '/it-it/'
+    | '/api/public/go/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SplatRoute: typeof SplatRoute
+  ContactsRoute: typeof ContactsRoute
+  CookieRoute: typeof CookieRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ItItIndexRoute: typeof ItItIndexRoute
   ApiPublicGoIdRoute: typeof ApiPublicGoIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookie': {
+      id: '/cookie'
+      path: '/cookie'
+      fullPath: '/cookie'
+      preLoaderRoute: typeof CookieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacts': {
+      id: '/contacts'
+      path: '/contacts'
+      fullPath: '/contacts'
+      preLoaderRoute: typeof ContactsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$': {
+      id: '/$'
+      path: '/$'
+      fullPath: '/$'
+      preLoaderRoute: typeof SplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +217,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SplatRoute: SplatRoute,
+  ContactsRoute: ContactsRoute,
+  CookieRoute: CookieRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  RobotsDottxtRoute: RobotsDottxtRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ItItIndexRoute: ItItIndexRoute,
   ApiPublicGoIdRoute: ApiPublicGoIdRoute,
 }
