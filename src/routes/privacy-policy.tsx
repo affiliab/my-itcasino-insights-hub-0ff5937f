@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import LegalLayout from "@/components/LegalLayout";
 
-const CANONICAL = "https://www.consulentia18.it/privacy-policy";
+const CANONICAL = "https://miglior-casino-online-non-aams.consulentia18.it/privacy-policy";
 
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
