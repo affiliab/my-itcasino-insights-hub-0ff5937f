@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const BASE = "https://www.consulentia18.it";
+const BASE = "https://miglior-casino-online-non-aams.consulentia18.it";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
