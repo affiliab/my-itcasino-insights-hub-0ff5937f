@@ -95,6 +95,7 @@ export default function CasinoPage() {
             <span>Consulentia18<small>consulentia18.it</small></span>
           </a>
           <nav className="c-menu" aria-label="Menu principale">
+            <a href="/">Casino Non AAMS</a>
             <a href="#classifica">Classifica</a>
             <a href="#criteri">Criteri</a>
             <a href="#bonus">Bonus</a>
