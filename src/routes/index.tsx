@@ -1,24 +1,32 @@
 import { createFileRoute } from "@tanstack/react-router";
+import CasinoPage, { buildStructuredData } from "@/components/CasinoPage";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const CANONICAL = "https://www.consulentia18.it/";
+const ALT = "https://miglior-casino-online-non-aams.consulentia18.it/";
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: CasinoPage,
+  head: () => ({
+    meta: [
+      { title: "Miglior casino online non AAMS 2026 - top 10 verificati" },
+      { name: "description", content: "Classifica dei migliori casino online non AAMS del 2026: bonus reali, tempi di prelievo, licenze Curacao e Anjouan. Guida testata da esperti." },
+      { name: "keywords", content: "miglior casino online non AAMS, casino non AAMS 2026, casino stranieri, bonus casino non AAMS" },
+      { property: "og:title", content: "Miglior casino online non AAMS 2026 - top 10 verificati" },
+      { property: "og:description", content: "Classifica dei migliori casino online non AAMS del 2026: bonus reali, prelievi rapidi, licenze estere. Guida indipendente." },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:locale", content: "it_IT" },
+      { property: "og:type", content: "article" },
+      { name: "twitter:title", content: "Miglior casino online non AAMS 2026" },
+      { name: "twitter:description", content: "Top 10 casino non AAMS testati: bonus, licenze, tempi di prelievo verificati." },
+    ],
+    links: [
+      { rel: "canonical", href: CANONICAL },
+      { rel: "alternate", hrefLang: "it-IT", href: ALT },
+      { rel: "alternate", hrefLang: "x-default", href: CANONICAL },
+    ],
+    scripts: buildStructuredData(CANONICAL).map(d => ({
+      type: "application/ld+json",
+      children: JSON.stringify(d),
+    })),
+  }),
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
