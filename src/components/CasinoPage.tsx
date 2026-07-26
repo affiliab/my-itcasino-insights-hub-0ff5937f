@@ -4,7 +4,14 @@ function Stars({ r }: { r: number }) {
   return <span className="c-stars" aria-label={`Voto ${r} su 5`}>{"★".repeat(Math.round(r))} {r.toFixed(1)}</span>;
 }
 
-function BrandMark({ name, color }: { name: string; color: string }) {
+function BrandMark({ name, color, logo }: { name: string; color: string; logo?: string }) {
+  if (logo) {
+    return (
+      <span className="c-brand-logo" style={{ background: color }}>
+        <img src={logo} alt={`Logo ${name}`} loading="lazy" width="72" height="44" />
+      </span>
+    );
+  }
   const init = name.slice(0, 2).toUpperCase();
   return <span className="c-brand-mark" style={{ background: color }} aria-hidden="true">{init}</span>;
 }
@@ -141,7 +148,7 @@ export default function CasinoPage() {
                     <td><span className="c-rank">{i+1}</span></td>
                     <td>
                       <div className="c-brand-cell">
-                        <BrandMark name={c.name} color={c.color}/>
+                        <BrandMark name={c.name} color={c.color} logo={c.logo}/>
                         <div>{c.name}<div style={{fontSize:12,color:"#9aa4bd",fontWeight:500}}>{c.license}</div></div>
                       </div>
                     </td>
