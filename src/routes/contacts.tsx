@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import LegalLayout from "@/components/LegalLayout";
 
-const CANONICAL = "https://www.consulentia18.it/contacts";
+const CANONICAL = "https://miglior-casino-online-non-aams.consulentia18.it/contacts";
 
 export const Route = createFileRoute("/contacts")({
   head: () => ({
