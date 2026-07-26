@@ -4,6 +4,9 @@ function Stars({ r }: { r: number }) {
   return <span className="c-stars" aria-label={`Voto ${r} su 5`}>{"★".repeat(Math.round(r))} {r.toFixed(1)}</span>;
 }
 
+const DEFAULT_PAYMENTS = ["VISA", "Mastercard", "Skrill", "Neteller", "Crypto"];
+const NO_CRYPTO_PAYMENTS = ["VISA", "Mastercard", "Skrill", "Neteller", "SEPA"];
+
 function BrandMark({ name, color, logo }: { name: string; color: string; logo?: string }) {
   if (logo) {
     return (
