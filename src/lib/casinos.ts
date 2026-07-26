@@ -23,6 +23,7 @@ export interface Casino {
   crypto: boolean;
   url: string;
   logo?: string;
+  payments?: string[];
 }
 
 export const CASINOS: Casino[] = [
