@@ -7,7 +7,7 @@ export const Route = createFileRoute("/contacts")({
   head: () => ({
     meta: [
       { title: "Contatti - Consulentia18" },
-      { name: "description", content: "Contatta la redazione di Consulentia18 per segnalazioni, collaborazioni o richieste sulla guida ai casino non AAMS 2026." },
+      { name: "description", content: "Contatta la redazione di Consulentia18 per segnalazioni, collaborazioni o richieste sulla guida ai casinos non AAMS 2026." },
       { property: "og:title", content: "Contatti - Consulentia18" },
       { property: "og:url", content: CANONICAL },
       { name: "robots", content: "index, follow" },
