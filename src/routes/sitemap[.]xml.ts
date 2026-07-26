@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 const BASE = "https://www.consulentia18.it";
-const ALT = "https://miglior-casino-online-non-aams.consulentia18.it";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
@@ -9,7 +8,6 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const urls = [
           { loc: `${BASE}/`, priority: "1.0", changefreq: "weekly" },
-          { loc: `${ALT}/`, priority: "0.9", changefreq: "weekly" },
           { loc: `${BASE}/contacts`, priority: "0.5", changefreq: "yearly" },
           { loc: `${BASE}/privacy-policy`, priority: "0.3", changefreq: "yearly" },
           { loc: `${BASE}/cookie`, priority: "0.3", changefreq: "yearly" },
