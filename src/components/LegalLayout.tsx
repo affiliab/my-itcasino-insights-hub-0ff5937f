@@ -7,7 +7,7 @@ export default function LegalLayout({ title, children }: { title: string; childr
         <div className="c-wrap c-nav">
           <a href="/" className="c-logo"><span className="c-logo-mark">C18</span><span>Consulentia18<small>consulentia18.it</small></span></a>
           <nav className="c-menu" aria-label="Menu principale">
-            <a href="/">Home</a>
+            <a href="/">Casino Non AAMS</a>
             <a href="/contacts">Contatti</a>
             <a href="/privacy-policy">Privacy</a>
             <a href="/cookie">Cookie</a>
