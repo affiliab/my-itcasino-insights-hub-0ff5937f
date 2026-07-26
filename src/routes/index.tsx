@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import CasinoPage, { buildStructuredData } from "@/components/CasinoPage";
 
-const CANONICAL = "https://www.consulentia18.it/";
-const ALT = "https://miglior-casino-online-non-aams.consulentia18.it/";
+const CANONICAL = "https://miglior-casino-online-non-aams.consulentia18.it/";
+const XDEFAULT = "https://www.consulentia18.it/";
 
 export const Route = createFileRoute("/")({
   component: CasinoPage,
@@ -21,8 +21,8 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: CANONICAL },
-      { rel: "alternate", hrefLang: "it-IT", href: ALT },
-      { rel: "alternate", hrefLang: "x-default", href: CANONICAL },
+      { rel: "alternate", hrefLang: "it-IT", href: CANONICAL },
+      { rel: "alternate", hrefLang: "x-default", href: XDEFAULT },
     ],
     scripts: buildStructuredData(CANONICAL).map(d => ({
       type: "application/ld+json",
