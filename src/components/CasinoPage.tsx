@@ -103,6 +103,20 @@ export default function CasinoPage() {
             <a href="#faq">FAQ</a>
             <a href="/contacts">Contatti</a>
           </nav>
+          <details className="c-menu-mobile" aria-label="Menu">
+            <summary aria-label="Apri menu">
+              <span className="c-burger" aria-hidden="true"><span/><span/><span/></span>
+            </summary>
+            <div className="c-menu-mobile-panel">
+              <a href="/">Casino Non AAMS</a>
+              <a href="#classifica">Classifica</a>
+              <a href="#criteri">Criteri</a>
+              <a href="#bonus">Bonus</a>
+              <a href="#sicurezza">Sicurezza</a>
+              <a href="#faq">FAQ</a>
+              <a href="/contacts">Contatti</a>
+            </div>
+          </details>
         </div>
       </header>
 
