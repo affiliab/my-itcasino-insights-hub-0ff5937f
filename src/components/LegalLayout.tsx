@@ -12,6 +12,15 @@ export default function LegalLayout({ title, children }: { title: string; childr
             <a href="/privacy-policy">Privacy</a>
             <a href="/cookie">Cookie</a>
           </nav>
+          <details className="c-menu-mobile" aria-label="Menu">
+            <summary aria-label="Apri menu"><span className="c-burger" aria-hidden="true"><span/><span/><span/></span></summary>
+            <div className="c-menu-mobile-panel">
+              <a href="/">Casino Non AAMS</a>
+              <a href="/contacts">Contatti</a>
+              <a href="/privacy-policy">Privacy</a>
+              <a href="/cookie">Cookie</a>
+            </div>
+          </details>
         </div>
       </header>
       <main>
