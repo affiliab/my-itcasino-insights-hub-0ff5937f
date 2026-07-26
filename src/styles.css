@@ -147,35 +147,78 @@
 
 /* ===== Consulentia18 — Casino non AAMS design system ===== */
 :root {
-  --c-bg: #0f1420;
-  --c-bg-2: #161c2c;
-  --c-panel: #1c2436;
-  --c-border: #2a3448;
+  --c-bg: #0a0d16;
+  --c-bg-2: #10141f;
+  --c-panel: #141826;
+  --c-panel-2: #1a1f30;
+  --c-border: #232a3d;
   --c-text: #f4f4f5;
-  --c-muted: #9aa4bd;
-  --c-accent: #ff7a1a;
-  --c-accent-2: #ffb547;
+  --c-muted: #8a94ad;
+  --c-accent: #ff2b56;
+  --c-accent-2: #ff5a7a;
   --c-gold: #ffd166;
   --c-green: #22c55e;
   --c-red: #ef4444;
 }
 
+body { background: var(--c-bg) !important; }
+
 .c-wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
-.c-header { position: sticky; top:0; z-index:50; background: rgba(15,20,32,.92); backdrop-filter: blur(10px); border-bottom:1px solid var(--c-border); }
+.c-header { position: sticky; top:0; z-index:50; background: rgba(10,13,22,.92); backdrop-filter: blur(10px); border-bottom:1px solid var(--c-border); }
 .c-nav { display:flex; align-items:center; justify-content:space-between; padding: 14px 0; gap:16px; }
 .c-logo { display:flex; align-items:center; gap:10px; color:var(--c-text); text-decoration:none; font-weight:800; font-size:18px; letter-spacing:-.01em; }
-.c-logo-mark { width:38px; height:38px; border-radius:10px; background: linear-gradient(135deg,#ff7a1a,#ffb547); display:grid; place-items:center; color:#0f1420; font-weight:900; box-shadow: 0 8px 24px rgba(255,122,26,.35); }
+.c-logo-mark { width:38px; height:38px; border-radius:10px; background: linear-gradient(135deg,#ff2b56,#ff5a7a); display:grid; place-items:center; color:#0a0d16; font-weight:900; box-shadow: 0 8px 24px rgba(255,43,86,.35); }
 .c-logo small { display:block; font-size:11px; color:var(--c-muted); font-weight:500; letter-spacing:.12em; text-transform:uppercase; }
 .c-menu { display:flex; gap: 22px; font-size:14px; }
 .c-menu a { color:var(--c-muted); text-decoration:none; }
 .c-menu a:hover { color:var(--c-accent-2); }
+.c-menu .c-menu-cta { color:#fff; background: linear-gradient(90deg,#ff2b56,#ff5a7a); padding:8px 14px; border-radius:999px; font-weight:700; }
 
 .c-hero { padding: 56px 0 32px; position:relative; overflow:hidden; }
-.c-hero:before { content:""; position:absolute; inset:-20% -10% auto auto; width:560px; height:560px; background: radial-gradient(closest-side, rgba(255,122,26,.25), transparent 70%); filter:blur(10px); pointer-events:none; }
+.c-hero:before { content:""; position:absolute; inset:-20% -10% auto auto; width:560px; height:560px; background: radial-gradient(closest-side, rgba(255,43,86,.28), transparent 70%); filter:blur(10px); pointer-events:none; }
+.c-hero { text-align:center; }
+.c-hero .c-eyebrow, .c-hero .c-lead { display:block; margin-left:auto; margin-right:auto; }
+.c-hero .c-lead { max-width:640px; }
+.c-hero-cta { display:inline-block; margin-top:24px; padding:16px 42px; border-radius:999px; background: linear-gradient(90deg,#ff2b56,#ff5a7a); color:#fff !important; font-weight:800; text-decoration:none; box-shadow:0 10px 30px rgba(255,43,86,.4); font-size:16px; }
+.c-hero-cta:hover { transform:translateY(-1px); filter:brightness(1.05); }
 .c-eyebrow { display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border:1px solid var(--c-border); border-radius:999px; color:var(--c-accent-2); font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
 .c-h1 { font-size: clamp(30px, 5vw, 52px); line-height:1.05; font-weight:900; margin:16px 0 14px; letter-spacing:-.02em; }
-.c-h1 span { background: linear-gradient(90deg,#ff7a1a,#ffd166); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.c-h1 span { background: linear-gradient(90deg,#ff2b56,#ff8fa3); -webkit-background-clip:text; background-clip:text; color:transparent; }
 .c-lead { color:var(--c-muted); font-size:18px; max-width: 720px; }
+
+/* ===== Ranking cards (stile competitor casino) ===== */
+.c-ranking { display:flex; flex-direction:column; gap:14px; margin: 18px 0 22px; }
+.c-rank-card { display:grid; grid-template-columns: 56px 200px 1fr 180px; gap:16px; align-items:center; background: var(--c-panel); border:1px solid var(--c-border); border-radius:16px; padding:16px 18px; transition: border-color .2s, transform .15s; }
+.c-rank-card:hover { border-color: rgba(255,43,86,.5); transform: translateY(-1px); }
+.c-rank-num { width:44px; height:44px; border-radius:12px; background: linear-gradient(135deg,#ff2b56,#ff5a7a); color:#fff; font-weight:900; display:grid; place-items:center; font-size:15px; letter-spacing:.02em; box-shadow: 0 4px 12px rgba(255,43,86,.35); }
+.c-rank-brand { display:flex; flex-direction:column; gap:8px; min-width:0; }
+.c-rank-brand .c-brand-logo { width:170px; height:64px; border-radius:12px; }
+.c-rank-brand-name { font-weight:800; font-size:15px; }
+.c-rank-brand-name small { display:block; font-size:11px; color:var(--c-muted); font-weight:500; margin-top:2px; letter-spacing:.06em; text-transform:uppercase; }
+.c-rank-mid { display:flex; flex-direction:column; gap:10px; min-width:0; }
+.c-pay { display:flex; flex-wrap:wrap; gap:6px; }
+.c-pay span { display:inline-flex; align-items:center; padding:4px 10px; background:#0d1120; border:1px solid var(--c-border); border-radius:6px; font-size:11px; color:#c9d0e2; font-weight:600; letter-spacing:.04em; }
+.c-bonus { color:#ffb4c1; font-weight:700; font-size:14px; line-height:1.45; }
+.c-bonus-tag { display:inline-block; margin-left:8px; padding:2px 8px; border-radius:999px; background: rgba(255,43,86,.15); color: var(--c-accent-2); font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+.c-rank-right { display:flex; flex-direction:column; align-items:stretch; gap:8px; }
+.c-cta-pill { display:block; text-align:center; padding:12px 20px; border-radius:999px; background: linear-gradient(90deg,#ff2b56,#ff5a7a); color:#fff !important; font-weight:800; text-decoration:none; box-shadow: 0 8px 20px rgba(255,43,86,.35); border:0; cursor:pointer; font-size:14px; }
+.c-cta-pill:hover { filter:brightness(1.05); transform:translateY(-1px); }
+@media (max-width: 820px) {
+  .c-rank-card { grid-template-columns: 44px 1fr; gap:12px; padding:14px; }
+  .c-rank-mid, .c-rank-right { grid-column: 1 / -1; }
+  .c-rank-brand { flex-direction:row; align-items:center; gap:12px; }
+  .c-rank-brand .c-brand-logo { width:100px; height:52px; }
+}
+
+/* Trust badges band */
+.c-trust { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; align-items:center; padding:22px; background: var(--c-panel); border:1px solid var(--c-border); border-radius:16px; margin: 20px 0; }
+.c-trust span { display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border:1px solid var(--c-border); border-radius:999px; color:#c9d0e2; font-size:13px; font-weight:700; letter-spacing:.04em; }
+.c-trust b { color: var(--c-accent-2); }
+
+/* Verdict / info-gain call-out */
+.c-verdict { background: linear-gradient(180deg, rgba(255,43,86,.06), transparent); border:1px solid rgba(255,43,86,.25); border-radius:14px; padding:18px 20px; margin: 16px 0; }
+.c-verdict h4 { margin:0 0 6px; color: var(--c-accent-2); font-size:13px; letter-spacing:.12em; text-transform:uppercase; }
+.c-verdict p { margin:0; color:#e6e9f2; font-size:15px; line-height:1.6; }
 
 .c-crumbs { color:var(--c-muted); font-size:13px; padding:14px 0; }
 .c-crumbs a { color:var(--c-muted); text-decoration:none; }
@@ -204,7 +247,7 @@
 .c-brand-logo { width:88px; height:52px; border-radius:10px; display:grid; place-items:center; padding:6px; overflow:hidden; flex-shrink:0; border:1px solid var(--c-border); }
 .c-brand-logo img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
 .c-stars { color:var(--c-gold); font-weight:800; white-space:nowrap; }
-.c-cta { display:inline-block; padding:10px 16px; border-radius:10px; background: linear-gradient(180deg,#ff8a2a,#ff6a12); color:#0f1420 !important; font-weight:800; text-decoration:none; box-shadow: 0 6px 18px rgba(255,122,26,.35); border:0; cursor:pointer; }
+.c-cta { display:inline-block; padding:10px 16px; border-radius:10px; background: linear-gradient(90deg,#ff2b56,#ff5a7a); color:#fff !important; font-weight:800; text-decoration:none; box-shadow: 0 6px 18px rgba(255,43,86,.35); border:0; cursor:pointer; }
 .c-cta:hover { filter:brightness(1.05); transform: translateY(-1px); }
 
 .c-card-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px; }
@@ -212,7 +255,7 @@
 .c-card h4 { margin:0 0 8px; color:var(--c-accent-2); font-size:15px; letter-spacing:.08em; text-transform:uppercase; }
 .c-card p { color:#cfd4e2; margin:0; font-size:14px; line-height:1.6; }
 
-.c-callout { border-left:3px solid var(--c-accent); background: rgba(255,122,26,.08); padding:14px 16px; border-radius:8px; color:#f0d3b5; margin: 14px 0; }
+.c-callout { border-left:3px solid var(--c-accent); background: rgba(255,43,86,.08); padding:14px 16px; border-radius:8px; color:#ffd6de; margin: 14px 0; }
 .c-callout.warn { border-color: var(--c-red); background: rgba(239,68,68,.08); color:#fbcaca; }
 .c-callout.ok { border-color: var(--c-green); background: rgba(34,197,94,.08); color:#c9f0d3; }
 
